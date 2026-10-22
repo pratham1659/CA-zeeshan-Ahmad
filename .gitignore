@@ -1,3 +1,29 @@
 node_modules
 dist
 .env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# Vite / TypeScript caches
+*.tsbuildinfo
+.vite
+vite.config.ts.timestamp-*
+coverage
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea
+.vscode/*
+!.vscode/extensions.json
+*.swp
+
+# Planning docs
+plan.md
+go-live-plan.md
+planweb.md
+go-live-planweb.md
