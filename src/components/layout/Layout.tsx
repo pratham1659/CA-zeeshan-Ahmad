@@ -1,12 +1,14 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import ScrollEffects from '../ui/ScrollEffects'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import FloatingContact from './FloatingContact'
+import DeclarationModal from './DeclarationModal'
 
 export default function Layout() {
   const { pathname, hash, key } = useLocation()
+  const [locked, setLocked] = useState(false)
 
   useEffect(() => {
     const target = hash ? document.querySelector(hash) : null
@@ -16,19 +18,23 @@ export default function Layout() {
 
   return (
     <>
-      <a
-        href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-xl focus:bg-accent focus:px-4 focus:py-2 focus:text-white"
-      >
-        Skip to content
-      </a>
-      <ScrollEffects />
-      <Navbar />
-      <main id="main">
-        <Outlet />
-      </main>
-      <Footer />
-      <FloatingContact />
+      {/* inert: while the declaration is open nothing behind it can be clicked, tabbed to or read */}
+      <div inert={locked}>
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-xl focus:bg-accent focus:px-4 focus:py-2 focus:text-white"
+        >
+          Skip to content
+        </a>
+        <ScrollEffects />
+        <Navbar />
+        <main id="main">
+          <Outlet />
+        </main>
+        <Footer />
+        <FloatingContact />
+      </div>
+      <DeclarationModal onOpenChange={setLocked} />
     </>
   )
 }
