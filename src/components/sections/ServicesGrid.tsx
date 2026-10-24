@@ -38,7 +38,7 @@ function Detail({ s }: { s: Service }) {
   const clamp = open ? '' : long ? 'line-clamp-3' : 'max-md:line-clamp-3'
   return (
     <>
-      <div className="space-y-3 text-justify text-muted [hyphens:auto] [text-wrap:pretty]">
+      <div className="space-y-3 text-justify text-sm text-muted sm:text-base [text-wrap:pretty]">
         {s.intro.map((p, i) => (
           <p key={p} className={i === 0 ? clamp : more}>
             <RichText text={p} />
@@ -58,7 +58,7 @@ function Detail({ s }: { s: Service }) {
       {s.sections?.map((sec) => (
         <div key={sec.title} className={more}>
           <Heading>{sec.title}</Heading>
-          <p className="mt-2 text-justify text-sm text-muted [hyphens:auto] [text-wrap:pretty]">
+          <p className="mt-2 text-justify text-sm text-muted [text-wrap:pretty]">
             <RichText text={sec.text} />
           </p>
         </div>

@@ -52,36 +52,36 @@ export const values: { icon: IconName; title: string; text: string }[] = [
 
 export const founderParagraphs = [
   'CA Zeeshan Ahmed is a highly accomplished Chartered Accountant with a strong multidisciplinary foundation in law, commerce, taxation, audit, and regulatory advisory. He is a **Post Graduate in Law (Gold Medalist)** and also holds graduation degrees in Commerce and Law, reflecting academic excellence and a deep understanding of the legal and commercial frameworks that govern business and finance. His professional competence is further strengthened by specialised qualifications including the **Diploma in Information Systems Audit (DISA)**, enabling him to address complex financial, technological, and risk related challenges with clarity and precision.',
-  'In addition to being a primary member of **ICAI Registered Valuers Organisation and Social Impact Assessor**, CA Zeeshan Ahmed possesses advanced expertise in **Forensic Audit and Fraud Detection**, Internal and Concurrent Audits, and regulatory domains such as **RERA and FEMA**. His professional training also extends to Artifical Intelligence – Level 1, Public Finance and Government Accounting, Indian Accounting Standards (Ind AS), UAE Corporate Tax, MSME advisory, and EXIM regulations, equipping him with a comprehensive perspective across domestic and international business environments. This rare integration of legal insight, technical accounting knowledge, and regulatory understanding allows him to deliver **holistic, practical, and compliance-focused solutions**.',
-  'Known for his **analytical mindset**, **attention to detail**, and client centric approach, he believes in understanding issues in depth before offering advice. His commitment to continuous learning, ethical practice, and long-term value creation has earned him the trust of clients and peers alike. Through a balanced blend of professionalism, adaptability, and integrity, CA Zeeshan Ahmed consistently strives to uphold the highest standards of the Chartered Accountancy profession while contributing meaningfully to sustainable business success.',
+  'In addition to being a primary member of **ICAI Registered Valuers Organisation and Social Impact Assessor**, CA Zeeshan Ahmed possesses advanced expertise in **Forensic Audit and Fraud Detection**, Internal and Concurrent Audits, and regulatory domains such as **RERA and FEMA**. His professional training also extends to Artifical Intelligence, Public Finance and Government Accounting, Indian Accounting Standards (Ind AS), UAE Corporate Tax, MSME advisory, and EXIM regulations, equipping him with a comprehensive perspective across domestic and international business environments. This rare integration of legal insight, technical accounting knowledge and regulatory understanding allows him to deliver **holistic, practical, and compliance focused solutions**.',
+  'Known for his **analytical mindset**, **attention to detail**, and client centric approach, he believes in understanding issues in depth before offering advice. His commitment to continuous learning, ethical practice and long-term value creation has earned him the trust of clients and peers alike. Through a balanced blend of professionalism, adaptability and integrity. CA Zeeshan Ahmed consistently strives to uphold the highest standards of the Chartered Accountancy profession while contributing meaningfully to sustainable business success.',
 ]
 
 export const achievements = [
   'Chartered Accountant',
   'Post Graduate in Law and Gold Medalist',
   'Graduate in Commerce and in Law',
-  'Registered Valuer',
+  'Primary member of ICAI RVO',
   'Social Impact Assessor',
   'Diploma in Information Systems Audit (DISA)',
 ]
 
+// Ordered so the chips pack into even rows on desktop
 export const expertise = [
-  'Forensic Audit and Fraud Detection',
-  'Internal and Concurrent Audits',
-  'RERA',
-  'FEMA',
-  'AICA – Level 1',
-  'Public Finance and Government Accounting',
   'Indian Accounting Standards (Ind AS)',
   'UAE Corporate Tax',
-  'MSME advisory',
+  'RERA',
+  'Public Finance and Government Accounting',
   'EXIM regulations',
+  'Forensic Audit and Fraud Detection',
+  'MSME advisory',
+  'FEMA',
+  'Internal and Concurrent Audits',
+  'AICA – Level 1',
 ]
 
 // The draft gives no dates other than 2023, so the earlier stages are labelled by stage, not by year
 export const timeline = [
-  { label: 'Foundation', text: 'Post Graduate in Law and Gold Medalist, with graduation degrees in Commerce and Law.' },
-  { label: 'Qualification', text: 'Chartered Accountant, with specialised diplomas in DISA, DIIT and DIRM.' },
-  { label: 'Specialisation', text: 'Registered Valuer and Social Impact Assessor, with expertise in forensic audit, RERA, FEMA, Ind AS, UAE Corporate Tax, MSME and EXIM.' },
-  { label: '2023', text: 'Zeeshan Ahmed & Co., Chartered Accountants, founded with its office in Ranchi, Jharkhand.' },
+  { label: 'Foundation', text: 'Post Graduate in Commerce and in Law (Gold Medalist), Graduate in Commerce and in Law' },
+  { label: 'Qualification', text: 'Chartered Accountant, with specialised Diploma in Information System Audit (DISA)' },
+  { label: 'Specialisation', text: 'Primary Member of ICAI RVO and Social Impact Assessor, with expertise in Forensic Audit, Public Finance and Govt. Accounting,  RERA, FEMA, Ind AS, UAE Corporate Tax, MSME and EXIM.' },
 ]

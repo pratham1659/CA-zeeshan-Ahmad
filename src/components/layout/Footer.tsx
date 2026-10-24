@@ -74,7 +74,9 @@ export default function Footer() {
             <li className="flex gap-2">
               <Icon name="pin" size={18} className="shrink-0 text-leaf" />
               <a href={site.mapHref} target="_blank" rel="noreferrer" className="inline-block transition hover:translate-x-1 hover:text-gold">
-                {site.address}
+                {site.addressName}
+                <br />
+                {site.addressLine}
               </a>
             </li>
           </ul>

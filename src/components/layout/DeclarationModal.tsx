@@ -54,7 +54,7 @@ export default function DeclarationModal({ onOpenChange }: { onOpenChange: (open
           <h2 id="declaration-title" className="flex items-center gap-2 text-2xl font-bold text-accent">
             <Icon name="shield" size={26} className="text-gold" /> Declaration
           </h2>
-          <div className="mt-4 space-y-4 text-justify text-[15px] leading-relaxed text-muted [hyphens:auto] [text-wrap:pretty] sm:text-base">
+          <div className="mt-4 space-y-4 text-justify text-sm leading-relaxed text-muted [text-wrap:pretty] sm:text-base">
             <p>
               Under the <strong className="font-semibold text-ink">Chartered Accountants Act, 1949</strong> and the guidelines issued by the{' '}
               <strong className="font-semibold text-ink">Institute of Chartered Accountants of India (ICAI)</strong>, Chartered Accountants may not
@@ -68,7 +68,7 @@ export default function DeclarationModal({ onOpenChange }: { onOpenChange: (open
                   <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-gold-light text-sm font-bold text-accent">
                     {i + 1}
                   </span>
-                  <span>{p}</span>
+                  <span className="min-w-0 flex-1">{p}</span>
                 </li>
               ))}
             </ol>

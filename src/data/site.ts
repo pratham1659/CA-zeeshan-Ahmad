@@ -19,6 +19,9 @@ export const site = {
   email: 'admin@cazeeshanahmed.com',
   // Shown in the footer and on the Contact page
   emails: ['info@cazeeshanahmed.com'],
+  // The footer shows the address on two lines: the firm name, then the street address
+  addressName: 'Zeeshan Ahmed & Co. Chartered Accountants',
+  addressLine: '208, Second Floor, H. R. Complex, Kadru, Ranchi, Jharkhand 834002',
   address: 'Zeeshan Ahmed & Co. Chartered Accountants, 208, Second Floor, H. R. Complex, Kadru, Ranchi, Jharkhand 834002',
   hours: 'Mon to Sat, 10:00 AM to 6:30 PM',
   mapEmbedSrc:

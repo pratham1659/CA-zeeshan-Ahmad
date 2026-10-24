@@ -84,43 +84,52 @@ export default function About() {
       </Section>
 
       <Section eyebrow="About founder" title="Meet CA Zeeshan Ahmed" intro="A Chartered Accountant with a multidisciplinary foundation in law, commerce, taxation, audit and regulatory advisory.">
-        <div className="flow-root">
+        {/* the photo stretches to the height of the first two paragraphs; the rest runs full width below */}
+        <div className="grid gap-8 md:grid-cols-5 md:gap-10">
           <img
             src={photo}
             alt="CA Zeeshan Ahmed"
             width={640}
             height={810}
             decoding="async"
-            className="mx-auto mb-8 aspect-[4/5] w-full max-w-xs rounded-2xl object-cover object-top shadow-[0_30px_60px_-15px_rgb(2_60_108/0.45),0_12px_24px_-8px_rgb(2_60_108/0.3)] ring-1 ring-black/5 md:float-left md:mb-4 md:mr-10 md:w-80"
+            className="mx-auto aspect-[4/5] w-full max-w-xs rounded-2xl object-cover object-top shadow-[0_30px_60px_-15px_rgb(2_60_108/0.45),0_12px_24px_-8px_rgb(2_60_108/0.3)] ring-1 ring-black/5 md:col-span-2 md:aspect-auto md:h-full md:max-w-none"
           />
-          <div className="space-y-5 text-justify text-sm leading-relaxed text-muted sm:text-lg [text-wrap:pretty]">
-            {founderParagraphs.map((p) => (
+          <div className="space-y-5 text-justify text-sm leading-relaxed text-muted sm:text-lg [text-wrap:pretty] md:col-span-3">
+            {founderParagraphs.slice(0, 2).map((p) => (
               <p key={p}>
                 <RichText text={p} />
               </p>
             ))}
           </div>
         </div>
+        <div className="mt-5 space-y-5 text-justify text-sm leading-relaxed text-muted sm:text-lg [text-wrap:pretty]">
+          {founderParagraphs.slice(2).map((p) => (
+            <p key={p}>
+              <RichText text={p} />
+            </p>
+          ))}
+        </div>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-2">
-          <Card>
-            <h3 className="mb-4 flex items-center gap-2 text-lg font-bold">
+        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          <Card className="flex flex-col !p-5">
+            <h3 className="mb-3 flex items-center gap-2 text-lg font-bold">
               <Icon name="award" size={22} className="text-gold" /> Highlights & achievements
             </h3>
-            <ul className="space-y-2">
+            <ul className="flex flex-1 flex-col justify-between gap-1.5 text-sm sm:text-base">
               {achievements.map((a) => (
                 <li key={a} className="flex gap-2 text-ink">
-                  <Icon name="check" size={20} className="mt-0.5 shrink-0 text-leaf-dark" />
+                  <Icon name="check" size={18} className="mt-0.5 shrink-0 text-leaf-dark" />
                   {a}
                 </li>
               ))}
             </ul>
           </Card>
-          <Card>
-            <h3 className="mb-4 flex items-center gap-2 text-lg font-bold">
+          <Card className="flex flex-col !p-5">
+            <h3 className="mb-3 flex items-center gap-2 text-lg font-bold">
               <Icon name="star" size={22} className="text-gold" /> Areas of expertise
             </h3>
-            <ul className="flex flex-wrap gap-2">
+            {/* chips keep their own width; rows are spread edge to edge and down the card height, so no gaps are left */}
+            <ul className="flex flex-1 flex-wrap content-between justify-between gap-2">
               {expertise.map((e) => (
                 <Chip key={e}>{e}</Chip>
               ))}
@@ -129,12 +138,12 @@ export default function About() {
         </div>
       </Section>
 
-      <Section eyebrow="Our journey" title="Experience timeline">
+      <Section eyebrow="Our journey" title="Experience Timeline">
         <ol className="mx-auto max-w-2xl space-y-6">
           {timeline.map((t) => (
             <li key={t.label}>
-              <Card className="flex items-center gap-8">
-                <span className="w-32 shrink-0 text-lg font-extrabold text-gold sm:w-36 sm:text-xl">{t.label}</span>
+              <Card className="flex flex-col items-start gap-1.5 sm:flex-row sm:items-center sm:gap-8">
+                <span className="shrink-0 text-lg font-extrabold text-gold sm:w-36 sm:text-xl">{t.label}</span>
                 <p className="text-muted">{t.text}</p>
               </Card>
             </li>
