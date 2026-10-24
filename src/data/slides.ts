@@ -1,5 +1,4 @@
 import type { IconName } from '../components/ui/Icon'
-import photo from '../asset/photo.webp'
 
 export interface Slide {
   tag: string
@@ -17,16 +16,6 @@ export interface Slide {
 }
 
 export const slides: Slide[] = [
-  {
-    tag: 'Meet the founder',
-    enquiry: 'your services',
-    title: 'CA Zeeshan Ahmed',
-    text: 'Chartered Accountant, Registered Valuer and Gold Medalist in Law, bringing legal, tax and audit insight together.',
-    icon: 'award',
-    gradient: 'from-accent-dark to-accent',
-    cta: 'book',
-    photo,
-  },
   {
     tag: 'Income Tax',
     enquiry: 'income tax filing and planning',

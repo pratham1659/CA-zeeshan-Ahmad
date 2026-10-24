@@ -130,13 +130,6 @@ export default function Carousel() {
                       </>
                     )}
                   </div>
-                  <ul className="mt-6 flex flex-wrap gap-2 text-xs font-medium text-white/90 sm:text-sm">
-                    {['Founded 2023', 'Ranchi, Jharkhand', 'Audit · Tax · Advisory'].map((t) => (
-                      <li key={t} className="inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-3 py-1 backdrop-blur">
-                        <Icon name="check" size={14} className="text-leaf" /> {t}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
                 <div className="relative order-first w-full max-w-xs shrink-0 self-center sm:order-none sm:w-80 lg:w-[26rem] lg:max-w-none">
                   <div aria-hidden="true" className="absolute -inset-4 rounded-[2rem] border border-white/25" />
