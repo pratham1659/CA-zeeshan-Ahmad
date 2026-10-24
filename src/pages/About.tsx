@@ -31,18 +31,18 @@ export default function About() {
   return (
     <>
       <Section eyebrow="About us" title="Zeeshan Ahmed & Co." intro={tagline}>
-        <div className="grid items-start gap-10 lg:grid-cols-5">
-          <div className="space-y-4 text-muted lg:col-span-3">
+        <div className="space-y-10">
+          <div className="space-y-5 text-justify text-[15px] leading-relaxed sm:text-lg text-muted [hyphens:auto] [text-wrap:pretty]">
             {firmParagraphs.map((p) => (
               <p key={p}>
                 <RichText text={p} />
               </p>
             ))}
           </div>
-          <div className="space-y-6 lg:col-span-2">
+          <div className="grid items-stretch gap-8 md:grid-cols-2">
             <Card className="group">
               <h3 className="mb-4 text-lg font-bold">What we do</h3>
-              <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+              <ul className="grid gap-3 sm:grid-cols-2">
                 {firmPillars.map((p) => (
                   <li key={p.title} className="flex items-center gap-3 font-medium text-ink">
                     <IconBadge name={p.icon} size={22} className="!size-11" />
@@ -85,17 +85,17 @@ export default function About() {
         </div>
       </Section>
 
-      <Section eyebrow="About founder" title="Meet ZA Zeeshan Ahmed" intro="A Chartered Accountant with a multidisciplinary foundation in law, commerce, taxation, audit and regulatory advisory.">
-        <div className="grid items-start gap-10 md:grid-cols-5">
+      <Section eyebrow="About founder" title="Meet CA Zeeshan Ahmed" intro="A Chartered Accountant with a multidisciplinary foundation in law, commerce, taxation, audit and regulatory advisory.">
+        <div className="flow-root">
           <img
             src={photo}
             alt="CA Zeeshan Ahmed"
             width={640}
             height={810}
             decoding="async"
-            className="mx-auto aspect-[4/5] w-full max-w-xs rounded-2xl object-cover object-top shadow-[0_30px_60px_-15px_rgb(2_60_108/0.45),0_12px_24px_-8px_rgb(2_60_108/0.3)] ring-1 ring-black/5 md:sticky md:top-24 md:col-span-2"
+            className="mx-auto mb-8 aspect-[4/5] w-full max-w-xs rounded-2xl object-cover object-top shadow-[0_30px_60px_-15px_rgb(2_60_108/0.45),0_12px_24px_-8px_rgb(2_60_108/0.3)] ring-1 ring-black/5 md:float-left md:mb-4 md:mr-10 md:w-80"
           />
-          <div className="space-y-4 text-muted md:col-span-3">
+          <div className="space-y-5 text-justify text-[15px] leading-relaxed sm:text-lg text-muted [hyphens:auto] [text-wrap:pretty]">
             {founderParagraphs.map((p) => (
               <p key={p}>
                 <RichText text={p} />

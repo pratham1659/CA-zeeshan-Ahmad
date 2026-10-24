@@ -17,20 +17,8 @@ export const site = {
     { label: 'Mobile', display: '+91 87895 48104', href: 'tel:+918789548104' },
   ],
   email: 'admin@cazeeshanahmed.com',
-  emails: [
-    'admin@cazeeshanahmed.com',
-    'info@cazeeshanahmed.com',
-    'ishtisham@cazeeshanahmed.com',
-    'zeeshan@cazeeshanahmed.com',
-    'shadan@cazeeshanahmed.com',
-  ],
-  // Shown in the footer: admin@ is left out and the order differs from the Contact page
-  footerEmails: [
-    'info@cazeeshanahmed.com',
-    'zeeshan@cazeeshanahmed.com',
-    'shadan@cazeeshanahmed.com',
-    'ishtisham@cazeeshanahmed.com',
-  ],
+  // Shown in the footer and on the Contact page
+  emails: ['info@cazeeshanahmed.com'],
   address: 'Zeeshan Ahmed & Co., 208, Second Floor, H. R. Complex, Kadru, Ranchi, Jharkhand 834002',
   hours: 'Mon to Sat, 10:00 AM to 7:00 PM',
   mapEmbedSrc:

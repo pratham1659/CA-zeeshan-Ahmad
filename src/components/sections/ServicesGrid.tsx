@@ -38,7 +38,7 @@ function Detail({ s }: { s: Service }) {
   const clamp = open ? '' : long ? 'line-clamp-3' : 'max-md:line-clamp-3'
   return (
     <>
-      <div className="space-y-3 text-muted">
+      <div className="space-y-3 text-justify text-muted [hyphens:auto] [text-wrap:pretty]">
         {s.intro.map((p, i) => (
           <p key={p} className={i === 0 ? clamp : more}>
             <RichText text={p} />
@@ -58,7 +58,9 @@ function Detail({ s }: { s: Service }) {
       {s.sections?.map((sec) => (
         <div key={sec.title} className={more}>
           <Heading>{sec.title}</Heading>
-          <p className="mt-2 text-sm text-muted">{sec.text}</p>
+          <p className="mt-2 text-justify text-sm text-muted [hyphens:auto] [text-wrap:pretty]">
+            <RichText text={sec.text} />
+          </p>
         </div>
       ))}
       <button
@@ -122,18 +124,18 @@ export default function ServicesGrid({ detailed = false }: { detailed?: boolean 
   }
 
   return (
-    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid grid-cols-2 gap-3 sm:gap-8 lg:grid-cols-3">
       {services.map((s, i) => (
         <Reveal key={s.id} delay={(i % 3) * 120} variant="zoom" className="h-full">
-          <Card className="group flex h-full flex-col hover:border-leaf hover:shadow-glow">
-            <ServiceArt id={s.id} className="-mx-6 -mt-6 mb-5 aspect-[16/9] w-[calc(100%+3rem)] max-w-none rounded-t-2xl" />
-            <div className="flex items-center gap-3">
-              <IconBadge name={s.icon} />
-              <h3 className="text-lg font-bold leading-snug">{s.title}</h3>
+          <Card className="group flex h-full flex-col p-3 hover:border-leaf hover:shadow-glow sm:p-6">
+            <ServiceArt id={s.id} className="-mx-3 -mt-3 mb-3 aspect-[16/9] w-[calc(100%+1.5rem)] max-w-none rounded-t-2xl sm:-mx-6 sm:-mt-6 sm:mb-5 sm:w-[calc(100%+3rem)]" />
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
+              <IconBadge name={s.icon} className="!size-10 sm:!size-14" size={22} />
+              <h3 className="text-sm font-bold leading-snug sm:text-lg">{s.title}</h3>
             </div>
-            <div className="mt-auto pt-5">
-              <Button to={`/services#${s.id}`} variant="secondary">
-                Read more <Icon name="arrow" size={18} />
+            <div className="mt-auto pt-3 sm:pt-5">
+              <Button to={`/services#${s.id}`} variant="secondary" className="!min-h-8 !gap-1 !px-2.5 !py-1 text-xs sm:!min-h-10 sm:!gap-1.5 sm:!px-4 sm:!py-2 sm:text-sm">
+                Read more <Icon name="arrow" size={14} />
               </Button>
             </div>
           </Card>

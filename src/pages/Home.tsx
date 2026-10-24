@@ -22,7 +22,7 @@ export default function Home() {
 
       <Section eyebrow="About us" title="Zeeshan Ahmed & Co." intro={tagline}>
         <div className="grid items-start gap-10 lg:grid-cols-5">
-          <div className="space-y-4 text-muted lg:col-span-3">
+          <div className="space-y-4 text-justify text-muted [hyphens:auto] [text-wrap:pretty] lg:col-span-3">
             <p><RichText text={firmParagraphs[0]} /></p>
             <p><RichText text={firmParagraphs[1]} /></p>
             <ul className="flex flex-wrap items-center gap-2 pt-2">

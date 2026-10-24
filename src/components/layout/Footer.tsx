@@ -5,11 +5,15 @@ import { navLinks, site } from '../../data/site'
 import { services } from '../../data/services'
 
 export default function Footer() {
-  const half = Math.ceil(services.length / 2)
+  // Accounting & Payroll is listed in the first column, right after Audit & Assurance
+  const accounting = services.find((s) => s.id === 'accounting-payroll')!
+  const ordered = services.filter((s) => s !== accounting)
+  ordered.splice(3, 0, accounting)
+  const half = Math.ceil(ordered.length / 2)
   return (
     <footer className="mt-12 bg-accent-dark text-white/80">
       <div aria-hidden="true" className="h-1.5 bg-tricolor" />
-      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_2fr_1.6fr_0.9fr]">
+      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_2.4fr_1.6fr_0.9fr]">
         <div>
           <div className="inline-block max-w-full rounded-xl bg-white p-2">
             <img src={footerLogo} alt={`${site.name}, Chartered Accountants`} width={476} height={142} className="block h-auto w-60 max-w-full" />
@@ -32,19 +36,16 @@ export default function Footer() {
 
         <div>
           <p className="mb-3 border-b-2 border-gold/60 pb-1 font-semibold text-white inline-block">Services</p>
-          <div className="grid grid-cols-2 gap-x-6">
-            {[services.slice(0, half), services.slice(half)].map((group, i) => (
-              <ul key={i} className="space-y-2 text-sm text-white/65">
-                {group.map((s) => (
-                  <li key={s.id}>
-                    <Link to={`/services#${s.id}`} className="inline-block transition hover:translate-x-1 hover:text-gold">
-                      {s.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+          {/* one grid, filled row by row, so both columns line up even when a title wraps */}
+          <ul className="grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-white/65">
+            {ordered.slice(0, half).flatMap((s, i) => [s, ordered[i + half]]).map((s) => (
+              <li key={s.id}>
+                <Link to={`/services#${s.id}`} className="inline-block whitespace-nowrap transition hover:translate-x-1 hover:text-gold">
+                  {s.footerTitle}
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
 
         <div>
@@ -55,7 +56,7 @@ export default function Footer() {
               <div className="space-y-1">
                 {site.phones.map((p) => (
                   <a key={p.href} href={p.href} className="block transition hover:translate-x-1 hover:text-gold">
-                    {p.display}
+                    <span className="text-white/90">{p.label}:</span> {p.display}
                   </a>
                 ))}
               </div>
@@ -63,7 +64,7 @@ export default function Footer() {
             <li className="flex gap-2">
               <Icon name="mail" size={18} className="shrink-0 text-leaf" />
               <div className="min-w-0 space-y-1">
-                {site.footerEmails.map((e) => (
+                {site.emails.map((e) => (
                   <a key={e} href={`mailto:${e}`} className="block whitespace-nowrap transition hover:translate-x-1 hover:text-gold">
                     {e}
                   </a>

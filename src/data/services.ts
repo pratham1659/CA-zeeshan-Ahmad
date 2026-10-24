@@ -8,6 +8,8 @@ export interface ServiceSection {
 export interface Service {
   id: string
   title: string
+  /** Short name for the footer, so each link stays on one line */
+  footerTitle: string
   icon: IconName
   /** Intro paragraphs shown on the Services page */
   intro: string[]
@@ -21,6 +23,7 @@ export const services: Service[] = [
   {
     id: 'direct-taxation',
     title: 'Direct Taxation',
+    footerTitle: 'Direct Taxation',
     icon: 'receipt',
     intro: [
       'We assist individuals and businesses with **income-tax compliance**, **tax return preparation**, **tax audit matters**, **TDS/TCS compliance**, and tax-related proceedings or representation where agreed. Advice is based on the facts and documents provided and the law applicable to the relevant period.',
@@ -36,6 +39,7 @@ export const services: Service[] = [
   {
     id: 'indirect-taxation',
     title: 'Indirect Taxation',
+    footerTitle: 'Indirect Taxation',
     icon: 'percent',
     intro: [
       'We provide support for **GST and other applicable indirect-tax requirements**, including registration, periodic returns, reconciliations, compliance reviews, and assistance with notices or proceedings as agreed.',
@@ -52,6 +56,7 @@ export const services: Service[] = [
   {
     id: 'audit-assurance',
     title: 'Audit & Assurance',
+    footerTitle: 'Audit & Assurance',
     icon: 'shield',
     intro: [
       'We undertake **audit and assurance assignments** in accordance with the applicable legal framework, professional standards, and agreed scope. Our approach emphasises appropriate **planning, evidence, documentation, and communication** of relevant observations.',
@@ -67,6 +72,7 @@ export const services: Service[] = [
   {
     id: 'rera',
     title: 'RERA Services',
+    footerTitle: 'RERA Services',
     icon: 'building',
     intro: [
       'We assist eligible clients with relevant **RERA-related financial and compliance requirements**, depending on the project, state rules, and role of the client. Services may include documentation support, financial information, periodic compliance assistance, and coordination for required professional reports.',
@@ -75,6 +81,7 @@ export const services: Service[] = [
   {
     id: 'valuation',
     title: 'Valuation Services',
+    footerTitle: 'Valuation Services',
     icon: 'chart',
     intro: [
       'Over the past few years, Zeeshan Ahmed & Co. has established **one of the finest niche valuation advisory practices**. Our expertise and structured approach inspire confidence among Finance Heads, Management Teams, Investors, Business Owners, and intermediaries including Audit, Tax, and Legal advisors.',
@@ -103,6 +110,7 @@ export const services: Service[] = [
   {
     id: 'company-llp',
     title: 'Company & LLP Services',
+    footerTitle: 'Company & LLP',
     icon: 'briefcase',
     intro: [
       'We assist entrepreneurs and businesses with the **incorporation and structuring of companies and limited liability partnerships**, along with related documentation and post-incorporation requirements. Support may include name-related applications, incorporation documentation, statutory registrations, maintenance of records, and guidance on ongoing obligations.',
@@ -118,6 +126,7 @@ export const services: Service[] = [
   {
     id: 'roc-compliance',
     title: 'ROC & Corporate Compliance',
+    footerTitle: 'ROC Compliance',
     icon: 'calendar',
     intro: [
       'We provide support for **routine and event-based corporate filings** and compliance under applicable company and LLP laws. Our work focuses on **accurate documentation, tracking of due dates**, and helping clients understand the approvals and records required for corporate actions.',
@@ -134,6 +143,7 @@ export const services: Service[] = [
   {
     id: 'consultancy-advisory',
     title: 'Consultancy & Advisory Services',
+    footerTitle: 'Consultancy & Advisory',
     icon: 'users',
     intro: [
       'Our consultancy and advisory services help clients understand **financial, tax, corporate, and regulatory issues** affecting their operations. We focus on identifying the relevant facts, explaining available options, and helping clients evaluate practical next steps. Any formal opinion or representation is provided only within an agreed engagement.',
@@ -148,6 +158,7 @@ export const services: Service[] = [
   {
     id: 'business-setup',
     title: 'Business Setup & Licensing',
+    footerTitle: 'Business Setup',
     icon: 'award',
     intro: [
       'We support new and existing businesses in identifying relevant **registrations, licences, and formalities** for their proposed activities. Requirements differ by sector, location, and legal structure; accordingly, the scope is determined after reviewing the business model and applicable rules.',
@@ -164,6 +175,7 @@ export const services: Service[] = [
   {
     id: 'documentation-drafting',
     title: 'Documentation & Drafting Services',
+    footerTitle: 'Drafting & Documents',
     icon: 'pen',
     intro: [
       'We assist with **business and compliance documentation** based on the transaction, legal structure, and intended purpose. Drafts are prepared from information and instructions supplied by the client and are subject to review and approval before use.',
@@ -179,6 +191,7 @@ export const services: Service[] = [
   {
     id: 'accounting-payroll',
     title: 'Accounting & Payroll',
+    footerTitle: 'Accounting & Payroll',
     icon: 'book',
     intro: [
       'Our accounting and payroll support is intended to help clients maintain **organised books and reliable periodic information**. Services can be arranged on a recurring or assignment basis according to the client’s systems, transaction volume, and reporting needs.',
@@ -195,6 +208,7 @@ export const services: Service[] = [
   {
     id: 'trust-ngo',
     title: 'Trust, Society & NGO Services',
+    footerTitle: 'Trust & NGO',
     icon: 'heart',
     intro: [
       'We assist **trusts, societies, Section 8 companies, and other not-for-profit organisations** with applicable registrations, tax-related applications, statutory compliance, and documentation. The requirements depend on the organisation’s legal form, objects, activities, and eligibility.',
