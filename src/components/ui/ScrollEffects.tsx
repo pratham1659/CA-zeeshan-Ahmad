@@ -37,11 +37,11 @@ export default function ScrollEffects() {
         type="button"
         aria-label="Back to top"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className={`fixed bottom-5 left-5 z-30 grid size-12 place-items-center rounded-full bg-gold text-accent-dark shadow-glow transition duration-300 hover:-translate-y-1 active:scale-90 md:bottom-8 md:left-auto md:right-8 ${
+        className={`fixed bottom-5 left-5 z-30 grid size-9 place-items-center rounded-full bg-gold text-accent-dark shadow-glow transition duration-300 hover:-translate-y-1 active:scale-90 md:bottom-8 md:left-auto md:right-8 md:size-12 ${
           showTop ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-4 opacity-0'
         }`}
       >
-        <Icon name="up" size={20} />
+        <Icon name="up" size={16} className="md:size-5" />
       </button>
     </>
   )

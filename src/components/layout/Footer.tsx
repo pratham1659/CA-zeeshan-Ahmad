@@ -1,17 +1,18 @@
 import { Link } from 'react-router-dom'
-import Brand from '../ui/Brand'
+import footerLogo from '../../asset/footer-logo.webp'
 import Icon from '../ui/Icon'
 import { navLinks, site } from '../../data/site'
 import { services } from '../../data/services'
 
 export default function Footer() {
+  const half = Math.ceil(services.length / 2)
   return (
     <footer className="mt-12 bg-accent-dark text-white/80">
       <div aria-hidden="true" className="h-1.5 bg-tricolor" />
-      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_2fr_1.6fr_0.9fr]">
         <div>
-          <div className="inline-block rounded-xl bg-white px-4 py-3">
-            <Brand />
+          <div className="inline-block max-w-full rounded-xl bg-white p-2">
+            <img src={footerLogo} alt={`${site.name}, Chartered Accountants`} width={476} height={142} className="block h-auto w-60 max-w-full" />
           </div>
           <p className="mt-3 text-sm text-white/65">{site.description}</p>
         </div>
@@ -31,15 +32,19 @@ export default function Footer() {
 
         <div>
           <p className="mb-3 border-b-2 border-gold/60 pb-1 font-semibold text-white inline-block">Services</p>
-          <ul className="space-y-2 text-sm text-white/65">
-            {services.map((s) => (
-              <li key={s.id}>
-                <Link to="/services" className="inline-block transition hover:translate-x-1 hover:text-gold">
-                  {s.title}
-                </Link>
-              </li>
+          <div className="grid grid-cols-2 gap-x-6">
+            {[services.slice(0, half), services.slice(half)].map((group, i) => (
+              <ul key={i} className="space-y-2 text-sm text-white/65">
+                {group.map((s) => (
+                  <li key={s.id}>
+                    <Link to={`/services#${s.id}`} className="inline-block transition hover:translate-x-1 hover:text-gold">
+                      {s.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             ))}
-          </ul>
+          </div>
         </div>
 
         <div>
@@ -47,29 +52,44 @@ export default function Footer() {
           <ul className="space-y-3 text-sm text-white/65">
             <li className="flex gap-2">
               <Icon name="phone" size={18} className="shrink-0 text-leaf" />
-              <a href={site.phoneHref} className="inline-block transition hover:translate-x-1 hover:text-gold">
-                {site.phone}
-              </a>
+              <div className="space-y-1">
+                {site.phones.map((p) => (
+                  <a key={p.href} href={p.href} className="block transition hover:translate-x-1 hover:text-gold">
+                    {p.display}
+                  </a>
+                ))}
+              </div>
             </li>
             <li className="flex gap-2">
               <Icon name="mail" size={18} className="shrink-0 text-leaf" />
-              <a href={`mailto:${site.email}`} className="inline-block transition hover:translate-x-1 hover:text-gold">
-                {site.email}
-              </a>
+              <div className="min-w-0 space-y-1">
+                {site.footerEmails.map((e) => (
+                  <a key={e} href={`mailto:${e}`} className="block whitespace-nowrap transition hover:translate-x-1 hover:text-gold">
+                    {e}
+                  </a>
+                ))}
+              </div>
             </li>
             <li className="flex gap-2">
               <Icon name="pin" size={18} className="shrink-0 text-leaf" />
-              <span>{site.address}</span>
+              <a href={site.mapHref} target="_blank" rel="noreferrer" className="inline-block transition hover:translate-x-1 hover:text-gold">
+                {site.address}
+              </a>
             </li>
           </ul>
-          <ul className="mt-4 flex gap-3 text-sm">
+        </div>
+
+        <div>
+          <p className="mb-3 border-b-2 border-gold/60 pb-1 font-semibold text-white inline-block">Social</p>
+          <ul className="space-y-3 text-sm text-white/65">
             {site.socials.map((s) => (
-              <li key={s.label}>
+              <li key={s.label} className="flex gap-2">
+                <Icon name={s.icon} size={18} className="shrink-0 text-leaf" />
                 <a
                   href={s.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-lg border border-white/20 px-3 py-2 text-white/85 transition hover:-translate-y-0.5 hover:border-gold hover:text-gold active:scale-95"
+                  className="inline-block transition hover:translate-x-1 hover:text-gold"
                 >
                   {s.label}
                 </a>

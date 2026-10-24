@@ -3,17 +3,16 @@ import { Outlet, useLocation } from 'react-router-dom'
 import ScrollEffects from '../ui/ScrollEffects'
 import Navbar from './Navbar'
 import Footer from './Footer'
-import Icon from '../ui/Icon'
-import { site } from '../../data/site'
+import FloatingContact from './FloatingContact'
 
 export default function Layout() {
-  const { pathname, hash } = useLocation()
+  const { pathname, hash, key } = useLocation()
 
   useEffect(() => {
     const target = hash ? document.querySelector(hash) : null
     if (target) target.scrollIntoView({ behavior: 'smooth' })
     else window.scrollTo(0, 0)
-  }, [pathname, hash])
+  }, [pathname, hash, key])
 
   return (
     <>
@@ -29,15 +28,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
-      <a
-        href={site.whatsappHref}
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Chat on WhatsApp"
-        className="fixed bottom-5 right-5 z-30 grid size-14 place-items-center rounded-full bg-leaf text-white shadow-glow transition active:scale-90 md:hidden"
-      >
-        <Icon name="chat" />
-      </a>
+      <FloatingContact />
     </>
   )
 }

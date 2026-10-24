@@ -138,15 +138,29 @@ export default function Contact() {
             <ul className="space-y-4 text-sm">
               <li className="flex gap-3">
                 <Icon name="phone" size={20} className="shrink-0 text-leaf-dark" />
-                <a href={site.phoneHref} className="transition hover:text-accent hover:underline">{site.phone}</a>
+                <div className="space-y-1">
+                  {site.phones.map((p) => (
+                    <a key={p.href} href={p.href} className="block transition hover:text-accent hover:underline">
+                      {p.display} <span className="text-muted">({p.label})</span>
+                    </a>
+                  ))}
+                </div>
               </li>
               <li className="flex gap-3">
                 <Icon name="mail" size={20} className="shrink-0 text-leaf-dark" />
-                <a href={`mailto:${site.email}`} className="transition hover:text-accent hover:underline">{site.email}</a>
+                <div className="min-w-0 space-y-1">
+                  {site.emails.map((e) => (
+                    <a key={e} href={`mailto:${e}`} className="block break-all transition hover:text-accent hover:underline">
+                      {e}
+                    </a>
+                  ))}
+                </div>
               </li>
               <li className="flex gap-3">
                 <Icon name="pin" size={20} className="shrink-0 text-leaf-dark" />
-                <span>{site.address}</span>
+                <a href={site.mapHref} target="_blank" rel="noreferrer" className="transition hover:text-accent hover:underline">
+                  {site.address}
+                </a>
               </li>
               <li className="flex gap-3">
                 <Icon name="clock" size={20} className="shrink-0 text-leaf-dark" />
@@ -154,16 +168,26 @@ export default function Contact() {
               </li>
             </ul>
             <Button href={site.whatsappHref} target="_blank" rel="noreferrer" variant="secondary" className="mt-6 w-full">
-              <Icon name="chat" size={20} /> Chat on WhatsApp
+              <Icon name="whatsapp" size={20} /> Chat on WhatsApp
             </Button>
           </Card>
           <div className="overflow-hidden rounded-2xl border border-accent/15 shadow-card">
             <iframe
               title="Office location map"
-              src={`https://www.google.com/maps?q=${encodeURIComponent(site.mapQuery)}&output=embed`}
+              src={site.mapEmbedSrc}
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
               className="h-64 w-full border-0"
               loading="lazy"
             />
+            <a
+              href={site.mapHref}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-center gap-2 border-t border-accent/15 bg-white px-4 py-3 font-semibold text-accent transition hover:bg-gold-light active:scale-95"
+            >
+              <Icon name="pin" size={20} /> Open in Google Maps
+            </a>
           </div>
         </div>
       </div>

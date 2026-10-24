@@ -51,7 +51,13 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <ul id="mobile-menu" className="mx-5 mb-4 space-y-2 rounded-2xl bg-white p-4 border border-accent/15 shadow-card md:hidden">
+        <ul
+          id="mobile-menu"
+          onClick={(e) => {
+            // close on any link tap, including links to the page the user is already on
+            if ((e.target as HTMLElement).closest('a')) setOpen(false)
+          }}
+          className="mx-5 mb-4 space-y-2 rounded-2xl bg-white p-4 border border-accent/15 shadow-card md:hidden">
           {navLinks.map((l) => (
             <li key={l.to}>
               <NavLink to={l.to} end className={(s) => `block ${linkClass(s)}`}>

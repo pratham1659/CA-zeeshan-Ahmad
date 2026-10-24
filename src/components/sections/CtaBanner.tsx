@@ -11,7 +11,7 @@ export default function CtaBanner() {
           <div aria-hidden="true" className="absolute -bottom-20 -left-10 size-56 rounded-full bg-leaf/30 blur-3xl" />
           <h2 className="relative text-2xl font-bold sm:text-3xl">Ready to simplify your finances?</h2>
           <p className="relative mx-auto mt-3 max-w-xl text-white/85">
-            Book a free 15 minute consultation and get clear answers to your tax and compliance questions.
+            Book a free 30 minute consultation and get clear answers to your tax and compliance questions.
           </p>
           <div className="relative mt-6 flex flex-col justify-center gap-4 sm:flex-row">
             <Button to="/contact">

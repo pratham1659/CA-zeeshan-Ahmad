@@ -1,4 +1,5 @@
 import type { IconName } from '../components/ui/Icon'
+import photo from '../asset/photo.webp'
 
 export interface Slide {
   tag: string
@@ -7,9 +8,25 @@ export interface Slide {
   icon: IconName
   enquiry: string
   gradient: string
+  /** Which pair of buttons the slide shows: chat (WhatsApp + email) or book (consultation + services) */
+  cta: 'chat' | 'book'
+  /** Service id of the illustration to show (see ServiceArt) */
+  art?: string
+  /** Photo shown instead of an illustration */
+  photo?: string
 }
 
 export const slides: Slide[] = [
+  {
+    tag: 'Meet the founder',
+    enquiry: 'your services',
+    title: 'CA Zeeshan Ahmed',
+    text: 'Chartered Accountant, Registered Valuer and Gold Medalist in Law, bringing legal, tax and audit insight together.',
+    icon: 'award',
+    gradient: 'from-accent-dark to-accent',
+    cta: 'book',
+    photo,
+  },
   {
     tag: 'Income Tax',
     enquiry: 'income tax filing and planning',
@@ -17,6 +34,8 @@ export const slides: Slide[] = [
     text: 'Accurate ITR filing and smart tax planning, so you pay only what you owe and never miss a deadline.',
     icon: 'receipt',
     gradient: 'from-accent-dark to-accent',
+    cta: 'chat',
+    art: 'direct-taxation',
   },
   {
     tag: 'GST',
@@ -25,6 +44,28 @@ export const slides: Slide[] = [
     text: 'From registration to monthly returns and reconciliations, we keep your business fully compliant.',
     icon: 'percent',
     gradient: 'from-accent-dark via-accent to-leaf-dark',
+    cta: 'book',
+    art: 'indirect-taxation',
+  },
+  {
+    tag: 'Audit & Assurance',
+    enquiry: 'audit and assurance services',
+    title: 'Audits that build confidence',
+    text: 'Statutory, internal and tax audits carried out with careful planning, evidence and clear communication.',
+    icon: 'shield',
+    gradient: 'from-accent-dark via-accent to-accent-light',
+    cta: 'chat',
+    art: 'audit-assurance',
+  },
+  {
+    tag: 'Valuation',
+    enquiry: 'valuation services',
+    title: 'Defensible valuations you can rely on',
+    text: 'Business valuations, purchase price allocations and regulatory valuations tailored to your requirements.',
+    icon: 'chart',
+    gradient: 'from-accent-dark via-accent to-gold',
+    cta: 'book',
+    art: 'valuation',
   },
   {
     tag: 'Startups',
@@ -32,14 +73,58 @@ export const slides: Slide[] = [
     title: 'Start your business the right way',
     text: 'Company or LLP registration, ROC filings and ongoing compliance handled end to end.',
     icon: 'building',
+    gradient: 'from-accent-dark via-accent to-leaf-dark',
+    cta: 'chat',
+    art: 'company-llp',
+  },
+  {
+    tag: 'RERA',
+    enquiry: 'RERA services',
+    title: 'RERA support for real estate projects',
+    text: 'Financial information, periodic compliance assistance and professional reports for RERA-related requirements.',
+    icon: 'building',
+    gradient: 'from-accent-dark to-accent',
+    cta: 'book',
+    art: 'rera',
+  },
+  {
+    tag: 'ROC & Compliance',
+    enquiry: 'ROC and corporate compliance',
+    title: 'Never miss a corporate filing',
+    text: 'Annual filings, resolutions, minutes and compliance calendars tracked and handled for you.',
+    icon: 'calendar',
     gradient: 'from-accent-dark via-accent to-gold',
+    cta: 'chat',
+    art: 'roc-compliance',
+  },
+  {
+    tag: 'Accounting & Payroll',
+    enquiry: 'accounting and payroll',
+    title: 'Organised books, reliable numbers',
+    text: 'Bookkeeping, reconciliations, payroll and periodic management reports on a recurring or assignment basis.',
+    icon: 'book',
+    gradient: 'from-accent-dark via-accent to-leaf-dark',
+    cta: 'book',
+    art: 'accounting-payroll',
+  },
+  {
+    tag: 'Trust & NGO',
+    enquiry: 'trust, society and NGO services',
+    title: 'Support for trusts, societies and NGOs',
+    text: 'Registrations, tax applications, Section 8 companies, CSR documentation and ongoing statutory compliance.',
+    icon: 'heart',
+    gradient: 'from-accent-dark to-accent',
+    cta: 'chat',
+    art: 'trust-ngo',
   },
   {
     tag: 'Free consultation',
     enquiry: 'a free consultation',
-    title: 'Talk to a Chartered Accountant today',
-    text: 'Book a free 15 minute call and get clear, jargon-free answers to your finance questions.',
+    title: 'From complexity to clarity, we make it simple!',
+    text: 'Book a free 30 minute call and get clear, jargon-free answers to your finance questions.',
     icon: 'chat',
     gradient: 'from-accent-dark via-accent to-leaf',
+    cta: 'book',
+    art: 'consultancy-advisory',
   },
 ]

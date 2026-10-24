@@ -15,6 +15,6 @@ export const faqs: AccordionItem[] = [
   },
   {
     question: 'Is the first consultation really free?',
-    answer: 'Yes, the first 15 minute call is free and comes with no obligation.',
+    answer: 'Yes, the first 30 minute call is free and comes with no obligation.',
   },
 ]

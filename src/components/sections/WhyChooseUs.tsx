@@ -4,9 +4,21 @@ import type { IconName } from '../ui/Icon'
 import IconBadge from '../ui/IconBadge'
 
 const reasons: { icon: IconName; title: string; text: string }[] = [
-  { icon: 'shield', title: 'Trusted & certified', text: 'ICAI-qualified professionals with years of hands-on experience.' },
-  { icon: 'clock', title: 'Always on time', text: 'Deadlines are tracked for you, so you never pay a late fee.' },
-  { icon: 'chat', title: 'Plain-language advice', text: 'No jargon. We explain what matters and what to do next.' },
+  {
+    icon: 'shield',
+    title: 'Integrated expertise',
+    text: 'Financial, tax and legal perspectives under one roof, so you get practical, forward looking advice.',
+  },
+  {
+    icon: 'chat',
+    title: 'Clarity and precision',
+    text: 'Complex statutory requirements explained plainly, aligned with your long-term business objectives.',
+  },
+  {
+    icon: 'users',
+    title: 'Trust and transparency',
+    text: 'A client centric approach built on integrity, confidentiality, responsiveness and accountability.',
+  },
 ]
 
 export default function WhyChooseUs() {
