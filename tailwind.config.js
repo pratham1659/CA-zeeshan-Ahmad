@@ -25,6 +25,7 @@ export default {
           '25%,75%': { boxShadow: '0 0 0 6px rgb(243 121 32 / 0.35), 0 0 36px 8px rgb(243 121 32 / 0.35)' },
           '50%': { boxShadow: '0 0 0 3px rgb(243 121 32 / 0.25), 0 0 20px 2px rgb(243 121 32 / 0.2)' },
         },
+        wave: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-5px)' } },
         float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' } },
       },
       animation: {

@@ -10,8 +10,17 @@ export default function Brand({ className = '' }: { className?: string }) {
         <span className="font-display text-lg font-bold text-accent underline decoration-2 underline-offset-4 sm:text-xl">
           {site.name}
         </span>
-        <span className="mt-1 text-[9px] font-extrabold uppercase tracking-[0.2em] text-[#55B848] sm:text-[10px]">
-          Chartered Accountants
+        {/* w-0 min-w-full: the line takes the width of the firm name above, and the letters spread across it */}
+        <span
+          role="img"
+          aria-label="Chartered Accountants"
+          className="mt-1 flex w-0 min-w-full justify-between text-[10px] font-extrabold uppercase text-[#55B848] sm:text-[11px]"
+        >
+          {[...'Chartered Accountants'].map((ch, i) => (
+            <span key={i} aria-hidden="true">
+              {ch === ' ' ? '\u00a0' : ch}
+            </span>
+          ))}
         </span>
       </span>
     </span>

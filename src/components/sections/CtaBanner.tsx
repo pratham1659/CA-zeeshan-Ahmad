@@ -20,9 +20,9 @@ export default function CtaBanner() {
             <Button
               variant="secondary"
               className="!border-white/70 !bg-transparent !text-white hover:!border-white hover:!bg-white/15"
-              href={site.phoneHref}
+              href={site.phones[2].href}
             >
-              Call {site.phone}
+              Call {site.phones[2].display}
             </Button>
           </div>
         </div>

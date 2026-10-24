@@ -1,6 +1,7 @@
 import Section from '../components/ui/Section'
 import Button from '../components/ui/Button'
 import Card from '../components/ui/Card'
+import AnimatedTagline from '../components/ui/AnimatedTagline'
 import RichText from '../components/ui/RichText'
 import Reveal from '../components/ui/Reveal'
 import CtaBanner from '../components/sections/CtaBanner'
@@ -30,9 +31,9 @@ export default function About() {
   usePageTitle('About')
   return (
     <>
-      <Section eyebrow="About us" title="Zeeshan Ahmed & Co." intro={tagline}>
+      <Section eyebrow="About us" title="Zeeshan Ahmed & Co." intro={<AnimatedTagline text={tagline} />}>
         <div className="space-y-10">
-          <div className="space-y-5 text-justify text-[15px] leading-relaxed sm:text-lg text-muted [hyphens:auto] [text-wrap:pretty]">
+          <div className="space-y-5 text-justify text-sm leading-relaxed text-muted sm:text-lg [text-wrap:pretty]">
             {firmParagraphs.map((p) => (
               <p key={p}>
                 <RichText text={p} />
@@ -63,9 +64,6 @@ export default function About() {
                   <Chip key={c}>{c}</Chip>
                 ))}
               </ul>
-              <p className="mt-4 flex items-center gap-2 text-sm text-muted">
-                <Icon name="pin" size={18} className="shrink-0 text-leaf-dark" /> Founded in 2023, office in Ranchi, Jharkhand
-              </p>
             </Card>
           </div>
         </div>
@@ -95,7 +93,7 @@ export default function About() {
             decoding="async"
             className="mx-auto mb-8 aspect-[4/5] w-full max-w-xs rounded-2xl object-cover object-top shadow-[0_30px_60px_-15px_rgb(2_60_108/0.45),0_12px_24px_-8px_rgb(2_60_108/0.3)] ring-1 ring-black/5 md:float-left md:mb-4 md:mr-10 md:w-80"
           />
-          <div className="space-y-5 text-justify text-[15px] leading-relaxed sm:text-lg text-muted [hyphens:auto] [text-wrap:pretty]">
+          <div className="space-y-5 text-justify text-sm leading-relaxed text-muted sm:text-lg [text-wrap:pretty]">
             {founderParagraphs.map((p) => (
               <p key={p}>
                 <RichText text={p} />

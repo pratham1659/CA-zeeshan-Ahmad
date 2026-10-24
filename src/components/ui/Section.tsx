@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 interface SectionProps {
   title?: string
   eyebrow?: string
-  intro?: string
+  intro?: ReactNode
   children: ReactNode
   id?: string
 }

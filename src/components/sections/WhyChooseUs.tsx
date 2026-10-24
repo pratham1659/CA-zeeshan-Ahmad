@@ -6,17 +6,17 @@ import IconBadge from '../ui/IconBadge'
 const reasons: { icon: IconName; title: string; text: string }[] = [
   {
     icon: 'shield',
-    title: 'Integrated expertise',
+    title: 'Integrated Expertise',
     text: 'Financial, tax and legal perspectives under one roof, so you get practical, forward looking advice.',
   },
   {
     icon: 'chat',
-    title: 'Clarity and precision',
+    title: 'Clarity and Precision',
     text: 'Complex statutory requirements explained plainly, aligned with your long-term business objectives.',
   },
   {
     icon: 'users',
-    title: 'Trust and transparency',
+    title: 'Trust and Transparency',
     text: 'A client centric approach built on integrity, confidentiality, responsiveness and accountability.',
   },
 ]

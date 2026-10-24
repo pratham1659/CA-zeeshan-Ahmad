@@ -115,7 +115,7 @@ const scenes: Record<string, React.ReactNode> = {
     <>
       <rect x="106" y="28" width="108" height="124" rx="12" fill="#fff" />
       <rect x="120" y="42" width="80" height="30" rx="6" fill="#023C6C" opacity=".85" />
-      <text x="194" y="64" textAnchor="end" fontFamily="Georgia, serif" fontWeight="700" fontSize="18" fill="#fff">₹ 1,24,500</text>
+      <text x="127" y="62" fontFamily="Arial, Helvetica, sans-serif" fontWeight="700" fontSize="14" fill="#fff" textLength="66" lengthAdjust="spacingAndGlyphs">₹ 1,24,500</text>
       <g fill="#023C6C" opacity=".35">
         <circle cx="130" cy="94" r="8" /><circle cx="160" cy="94" r="8" /><circle cx="190" cy="94" r="8" />
         <circle cx="130" cy="120" r="8" /><circle cx="160" cy="120" r="8" />

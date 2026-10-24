@@ -8,6 +8,7 @@ import { faqs } from '../data/faqs'
 import ServicesGrid from '../components/sections/ServicesGrid'
 import WhyChooseUs from '../components/sections/WhyChooseUs'
 import CtaBanner from '../components/sections/CtaBanner'
+import AnimatedTagline from '../components/ui/AnimatedTagline'
 import RichText from '../components/ui/RichText'
 import Card from '../components/ui/Card'
 import IconBadge from '../components/ui/IconBadge'
@@ -20,9 +21,9 @@ export default function Home() {
     <>
       <Carousel />
 
-      <Section eyebrow="About us" title="Zeeshan Ahmed & Co." intro={tagline}>
+      <Section eyebrow="About us" title="Zeeshan Ahmed & Co." intro={<AnimatedTagline text={tagline} />}>
         <div className="grid items-start gap-10 lg:grid-cols-5">
-          <div className="space-y-4 text-justify text-muted [hyphens:auto] [text-wrap:pretty] lg:col-span-3">
+          <div className="space-y-4 text-justify text-sm text-muted sm:text-base [text-wrap:pretty] lg:col-span-3">
             <p><RichText text={firmParagraphs[0]} /></p>
             <p><RichText text={firmParagraphs[1]} /></p>
             <div className="pt-2">
@@ -50,7 +51,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section eyebrow="What we do" title="Services for every stage" intro="From your first tax return to a company audit, we handle the numbers so you can focus on what you do best.">
+      <Section eyebrow="What we do" title="Services for every stage" intro="From your first tax return to a company audit, we handle the numbers so you can focus on what you do best, while we take care of your compliances.">
         <ServicesGrid />
         <div className="mt-10 text-center">
           <Button to="/services" variant="secondary">

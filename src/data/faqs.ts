@@ -2,10 +2,6 @@ import type { AccordionItem } from '../components/ui/Accordion'
 
 export const faqs: AccordionItem[] = [
   {
-    question: 'Which documents do I need to file my income tax return?',
-    answer: 'Typically PAN, Aadhaar, Form 16 or income statements, bank statements, and investment proofs. We share a full checklist once you get in touch.',
-  },
-  {
     question: 'How quickly will you respond to my enquiry?',
     answer: 'We reply within one business day, and usually much sooner during working hours.',
   },
