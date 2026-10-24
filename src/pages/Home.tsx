@@ -11,7 +11,7 @@ import CtaBanner from '../components/sections/CtaBanner'
 import RichText from '../components/ui/RichText'
 import Card from '../components/ui/Card'
 import IconBadge from '../components/ui/IconBadge'
-import { clientTypes, firmPillars, firmParagraphs, tagline } from '../data/about'
+import { firmPillars, firmParagraphs, tagline } from '../data/about'
 import { usePageTitle } from '../hooks/usePageTitle'
 
 export default function Home() {
@@ -25,14 +25,6 @@ export default function Home() {
           <div className="space-y-4 text-justify text-muted [hyphens:auto] [text-wrap:pretty] lg:col-span-3">
             <p><RichText text={firmParagraphs[0]} /></p>
             <p><RichText text={firmParagraphs[1]} /></p>
-            <ul className="flex flex-wrap items-center gap-2 pt-2">
-              <li className="text-sm font-semibold text-ink">We serve:</li>
-              {clientTypes.map((c) => (
-                <li key={c} className="rounded-full border border-accent/20 bg-white px-3 py-1.5 text-sm font-medium text-accent shadow-soft">
-                  {c}
-                </li>
-              ))}
-            </ul>
             <div className="pt-2">
               <Button to="/about" variant="secondary">
                 Read more about us <Icon name="arrow" size={18} />

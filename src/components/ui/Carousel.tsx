@@ -36,9 +36,10 @@ export default function Carousel() {
       aria-roledescription="carousel"
       aria-label="Highlights"
       className="w-full"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocus={() => setPaused(true)}
+      // Pause on hover (mouse only: touch has no "leave", so it would stay paused) and on keyboard focus
+      onPointerEnter={(e) => e.pointerType === 'mouse' && setPaused(true)}
+      onPointerLeave={(e) => e.pointerType === 'mouse' && setPaused(false)}
+      onFocus={(e) => e.target.matches(':focus-visible') && setPaused(true)}
       onBlur={() => setPaused(false)}
     >
       <div
