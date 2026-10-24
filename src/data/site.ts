@@ -29,7 +29,7 @@ export const site = {
     { label: 'Facebook', icon: 'facebook', href: 'https://www.facebook.com/zeeshanahmedco' },
     { label: 'Instagram', icon: 'instagram', href: 'https://www.instagram.com/zeeshanahmedco' },
     { label: 'X (Twitter)', icon: 'x', href: 'https://www.x.com/zeeshanahmedco' },
-    { label: 'YouTube', icon: 'youtube', href: 'https://www.youtube.com/zeeshanahmedco' },
+    { label: 'YouTube', icon: 'youtube', href: 'https://www.youtube.com/@zeeshanahmedco' },
   ] as { label: string; icon: IconName; href: string }[],
 }
 
